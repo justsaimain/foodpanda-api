@@ -29,6 +29,9 @@ app.get("/", async (req, res) => {
     const { data } = response.data;
     const { menus } = data;
     res.send("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
+    res.send({
+      messages: [{ text: `${data.name} ကနေ ဘာတွေမှာယူမလဲ။ 💩` }],
+    });
   } catch (err) {
     console.error(err);
     res.send("something was wrong");
