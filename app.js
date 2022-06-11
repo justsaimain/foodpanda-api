@@ -28,8 +28,8 @@ app.get("/", async (req, res) => {
     const response = await axios.get(apiUrl);
     const { data } = response.data;
     const { menus } = data;
-    res.send("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
-    res.send({
+    // res.send("<pre>" + JSON.stringify(data, null, 2) + "</pre>");
+    res.json({
       messages: [{ text: `${data.name} ကနေ ဘာတွေမှာယူမလဲ။ 💩` }],
     });
   } catch (err) {
