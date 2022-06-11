@@ -13,6 +13,7 @@ app.listen(PORT, () => console.log(`server running on port ${PORT}`));
 
 app.get("/", async (req, res) => {
   const inputUrl = req.query.input;
+  console.log("input url", inputUrl);
   const id = inputUrl.split("/")[4];
   const apiUrl = `https://mm.fd-api.com/api/v5/vendors/${id}?include=menus&basket_currency=MMK`;
   try {
